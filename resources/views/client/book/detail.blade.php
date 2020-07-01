@@ -27,7 +27,10 @@
             <p>{{$book->description}}</p>
 
                 <ul>
-
+                    <li>
+                        <span class="name">Qty</span><span class="clm">:</span>
+                    <span class="price final">{{$book->qty='1'}}</span>
+                    </li>
                     <li>
                         <span class="name">Book Price</span><span class="clm">:</span>
                     <span class="price final">{{$book->price}}</span>

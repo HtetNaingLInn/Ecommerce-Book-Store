@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 use session;
 
@@ -117,5 +118,29 @@ class HomeController extends Controller
 
         return view('client.cart.cart', compact('books', 'total'));
 
+    }
+
+    public function check(Request $request, $id)
+    {
+
+        $cart = $request->session()->get('items');
+
+        $books = array();
+
+        for ($i = 0; $i < count($cart); $i++) {
+
+            $book = Book::find($cart[$i]);
+
+            array_push($books, $book);
+        }
+
+        $Books = $books;
+
+        $total = 0;
+        foreach ($books as $book) {
+            $total += $book->price;
+        }
+        $user = User::findOrfail($id);
+        return view('client.cart.order', compact('books', 'total', 'user', 'Books'));
     }
 }

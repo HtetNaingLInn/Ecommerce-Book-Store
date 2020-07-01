@@ -37,7 +37,7 @@
                                             </div>
                                         </td>
                                         <td data-th="Quantity" class="text-center">
-                                            1
+                                          {{$book->qty='1'}}
                                         </td>
                                      <td data-th="Subtotal" class="text-center">{{$book->price}}</td>
 
@@ -56,7 +56,21 @@
                                     <td><a href="{{asset('/')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
 
                                     <td class="hidden-xs text-center" colspan="2"><strong>Total &nbsp;: &nbsp;&nbsp;&nbsp; {{$total}} Kyats</strong></td>
-                                        <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+
+
+                                        <td>
+                                            @if (Auth::user())
+
+
+                                        <a href="{{action('HomeController@check',Auth::user()->id)}}" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+
+                                        @else
+                                        <a href="{{asset('register')}}"class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+                                        @endif
+
+                                        </td>
+
+
                                     </tr>
                                 </tfoot>
 

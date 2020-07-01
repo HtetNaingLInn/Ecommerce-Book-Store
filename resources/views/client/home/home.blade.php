@@ -4,6 +4,10 @@
 
 @section('content')
 
+@if (session('status'))
+<p class="alert alert-success">{{session('status')}}</p>
+    @endif
+
 <section class="slider">
     <div class="container">
         <div id="owl-demo" class="owl-carousel owl-theme">

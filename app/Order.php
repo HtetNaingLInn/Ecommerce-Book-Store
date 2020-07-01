@@ -2,31 +2,36 @@
 
 namespace App;
 
+use App\Book;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Book extends Model
+class Order extends Model
 {
+
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'title',
+        'user_id',
+
         'image',
-        'price',
         'description',
-        'qty',
-        'category_id',
+        'phone',
+        'type',
+        'status',
     ];
 
-    public function category()
+    public function book()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Book::class);
+
     }
 
-    public function order()
+    public function user()
     {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsTo(User::class);
     }
 }

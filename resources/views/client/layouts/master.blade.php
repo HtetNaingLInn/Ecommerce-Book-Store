@@ -31,7 +31,14 @@
                     @if (Auth::user()->role ==='Admin')
                     <a class="navbar-brand" href="{{asset('/admin/category')}}"><h5> <i class="text-info">DashBoard</i> </h5></a>
                     @else
-                <a href="{{asset('/')}}"><h5 class="text-dark">Home</h5></a>
+
+
+                        <a href="{{asset('/')}}"><h5 class="text-dark mr-2">Home</h5></a>
+
+
+                    <a href="{{action('OrderController@show',Auth::user()->id)}}"><h5 class="text-dark">Order List</h5></a>
+
+                </ul>
                     @endif
                     @endif
 
@@ -82,12 +89,17 @@
 
                         </ul>
                         <div class="cart my-2 my-lg-0">
+
+
                             <a href="{{url('/cart')}}">
                                 <i class="fa fa-shopping-cart text-dark" aria-hidden="true"></i>
 
                                 @if (session('items'))
                                 {{count(session('items'))}}
+
                             @endif
+
+
                             </a>
 
                         </div>

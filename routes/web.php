@@ -24,6 +24,13 @@ Route::get('/{id}/cart', 'HomeController@add');
 Route::get('/cart', 'HomeController@show');
 Route::get('cart/delete/{id}', 'HomeController@cartDelete');
 
+Route::get('check/{id}', 'HomeController@check')->middleware('auth');
+Route::post('check/{id}', 'OrderController@store')->middleware('auth');
+
+Route::get('order/{id}', 'OrderController@show')->middleware('auth');
+
+Route::get('order/detail/{id}', 'OrderController@detail')->middleware('auth');
+
 Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => ['can:isAdmin']], function () {
 
     Route::get('category', 'CategoryController@index');
@@ -41,5 +48,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => ['can
     Route::get('book/{id}/show', 'BookController@show');
     Route::get('book/{id}/destroy', 'BookController@destroy');
     Route::get('book/category/{id}', 'BookController@category');
+
+    Route::get('user', 'UserController@index');
+
+    Route::get('order', 'OrderController@index');
+    Route::get('order/detail/{id}', 'OrderController@detail');
+
+    Route::get('order/edit/{id}', 'OrderController@edit');
+    Route::post('order/edit/{id}', 'OrderController@update');
 
 });
