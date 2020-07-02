@@ -1,4 +1,4 @@
-# Ecommerce-Book-Store
+# E-commerce-Book-Store
 
 ### Installation
 
