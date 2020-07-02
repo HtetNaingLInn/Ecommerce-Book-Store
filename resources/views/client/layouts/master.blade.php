@@ -29,7 +29,7 @@
 
 
                     @if (Auth::user()->role ==='Admin')
-                    <a class="navbar-brand" href="{{asset('/admin/category')}}"><h5> <i class="text-info">DashBoard</i> </h5></a>
+                    <a class="navbar-brand" href="{{asset('/admin/order')}}"><h5> <i class="text-info">DashBoard</i> </h5></a>
                     @else
 
 
