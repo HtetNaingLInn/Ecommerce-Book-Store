@@ -56,7 +56,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
+                                <a href="login/facebook" class="btn btn-primary">
+                                    <i class="fab fa-facebook-square"></i> Login with Facebook
+                                </a>
 
                                     <a class="btn btn-link" href="{{ route('register') }}">
                                         {{ __('Register Here') }}

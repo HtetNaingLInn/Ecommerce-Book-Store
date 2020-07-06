@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
 Auth::routes();
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index')->name('home');
