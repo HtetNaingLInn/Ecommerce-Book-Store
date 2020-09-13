@@ -100,6 +100,7 @@ class HomeController extends Controller
 
     public function cartDelete(Request $request, $id)
     {
+
         $cart = $request->session()->get('items');
 
         $books = array();

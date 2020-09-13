@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
         $faker = Faker\Factory::create();
         $users = [
 
-            ['name' => 'htetnaing', 'email' => 'htetnaing@gmail.com', 'role' => 'Admin'],
+            ['name' => 'mg mg', 'email' => 'mgmg@gmail.com', 'role' => 'Admin'],
         ];
         $password = "password";
         foreach ($users as $user) {

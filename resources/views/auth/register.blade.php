@@ -63,12 +63,26 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                                <a class="btn btn-link" href="{{ route('login') }}">
-                                    {{ __('Login Here') }}
-                                </a>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Register') }}
+                                        </button>
+
+                                    </div>
+                                    <div class="col-md-8">
+                                        <a href="login/facebook" class="btn btn-primary">
+                                            <i class="fab fa-facebook-square"></i> &nbsp;Facebook Login
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+
+
+
                             </div>
                         </div>
                     </form>
